@@ -1,0 +1,21 @@
+title: PolicyStore
+type: object
+required:
+- type
+properties:
+  type:
+    type: string
+    enum:
+    - GitBundle
+  description:
+    desc: This is the description for PolicyStore
+$schema: http://json-schema.org/draft-07/schema#
+allOf:
+- if:
+    properties:
+      type:
+        const: GitBundle
+  then:
+    properties:
+      spec:
+        $ref: gitbundle-store.yaml

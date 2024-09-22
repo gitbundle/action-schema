@@ -1,0 +1,14 @@
+version: 1
+kind: template
+spec:
+  type: step
+  spec:
+    type: http
+    timeout: 10m
+    spec:
+      url: http://<+template.inputs.env>.gitbundle.io
+      method: GET
+  
+  inputs:
+    env:
+      type: string

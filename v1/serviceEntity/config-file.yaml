@@ -1,0 +1,23 @@
+title: ConfigFile
+type: object
+required:
+- id
+- type
+- spec
+properties:
+  id:
+    type: string
+  type:
+    type: string
+    enum:
+    - gitbundle
+allOf:
+- if:
+    properties:
+      type:
+        const: gitbundle
+  then:
+    properties:
+        spec:
+          $ref: ./stores/gitbundle-store.yaml
+$schema: http://json-schema.org/draft-07/schema#

@@ -1,0 +1,25 @@
+title: Input
+type: object
+discriminator: type
+description: Input defines an input parameter.
+properties:
+  type:
+    description: Type defines the input type.
+    type: string
+    enum:
+      - string
+      - number
+      - boolean
+      - array
+      - object
+      - secret
+  desc:
+    type: string
+    description: Desc defines the input description.
+  required:
+    type: boolean
+    description: Required indicates the input is required.
+  execution_input:
+    description: a boolean that defines whether the value is an execution input
+    type: boolean
+    default: false

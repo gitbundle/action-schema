@@ -1,0 +1,7 @@
+title: Delegate
+description: Delegate defines the delegate matching logic.
+oneOf:
+  - type: array
+    items:
+      type: string
+  - type: string
